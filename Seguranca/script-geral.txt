@@ -1,0 +1,45 @@
+Roteador
+
+R1
+
+ena
+conf t
+hostname R1
+enable secret ciscoe
+int gi0/0
+ip address 172.16.0.1 255.255.0.0
+no shut
+line console 0
+password cisco
+login
+line vty 0 15
+password ciscot
+login
+service password-encryption
+end
+copy run star
+
+Switch
+
+SW1
+
+ena
+conf t
+hostname SW1
+enable secret ciscoe
+int vlan1
+ip address 172.16.0.2 255.255.0.0
+no shut
+line console 0
+password cisco
+login
+line vty 0 15
+password ciscot
+login
+service password-encryption
+end
+copy run star
+
+
+
+
